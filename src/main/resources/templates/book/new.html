@@ -48,13 +48,13 @@ form {
 </head>
 <body>
 <form th:method="post" th:action="@{/book}" th:object="${kitob}">
-    <label for="bookName">Book name</label>
+    <label for="bookName">BOOK NAME</label>
     <input name="bookName" type="text" th:field="*{bookName}" id="bookName">
     <br>
-    <label for="bookAuthor">Author</label>
+    <label for="bookAuthor">BOOK AUTHOR</label>
     <input name="bookAutor" type="text" th:field="*{bookAuthor}" id="bookAuthor">
     <br>
-    <label for="date">Date</label>
+    <label for="date">BOOK DATE</label>
     <input name="date" type="text" th:field="*{date}" id="date">
 
     <input type="submit" value="Add book"></form>

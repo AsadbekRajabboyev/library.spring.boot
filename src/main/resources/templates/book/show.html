@@ -47,13 +47,17 @@ form {
     </style>
     </head>
     <body>
+    <h3>ID</h3>
     <p th:text="${kitob.getBookId()}"></p>
+    <h3>KITOB NOMI</h3>
     <p th:text="${kitob.getBookName()}"></p>
+    <h3>KITOB AVTORI</h3>
     <p th:text="${kitob.getBookAuthor()}"></p>
+    <h3>KITOB CHIQARILGAN SANA</h3>
     <p th:text="${kitob.getDate()}"></p>
 
     <div th:if="${owner}">
-        <span>Kitob xozirda:</span> <span th:text="${owner.getName()}">Person name</span>
+        <span>KITOB XOZIRDA:</span> <span th:text="${owner.getName()}">Person name</span>
         <form th:method="PATCH" th:action="@{/book/{id}/setNull(id=${kitob.getBookId()})}">
             <input type="submit" value="Kitobni olish">
         </form>
@@ -61,7 +65,7 @@ form {
 
     <div th:if="${people}">
         <form th:method="PATCH" th:action="@{/book/{id}/giveBook(id=${kitob.getBookId()})}">
-            <label for="person">Kitobni kimga belgilaysiz</label>
+            <label for="person">KITOBNI KIMGA BELGILAYSIZ</label>
             <select th:object="${person}" th:field="*{id}" id="person">
                 <option th:each="person:${people}" th:value="${person.getId()}" th:text="${person.getName()}"></option>
             </select>

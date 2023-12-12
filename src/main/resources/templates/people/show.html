@@ -49,13 +49,14 @@ form {
     </style>
 </head>
 <body>
+<h3>ID</h3>
 <p th:text="${person.getId()}"></p>
+<h3>ISMI</h3>
 <p th:text="${person.getName()}"></p>
+<h3>YOSHI</h3>
 <p th:text="${person.getAge()}"></p>
-<p th:text="${person.getAge()}"></p>
+<h3>QOSHILGAN SANA</h3>
 <p th:text="${person.getDateOfBirth()}"></p>
-
-<p th:text="${person.getCreatedAt()}"></p>
 
 <div th:if="${books.isEmpty()}">
     <p>Bu user xali kitob olmagan </p>

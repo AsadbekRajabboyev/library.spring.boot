@@ -48,13 +48,13 @@ form {
 </head>
 <body>
 <form th:method="patch" th:action="@{/book/{id}(id = ${kitob.getBookId()})}" th:object="${kitob}">
-    <label for="name">Name</label>
+    <label for="name">BOOK NAME</label>
     <input name="name" type="text" th:field="*{bookName}" id="name">
     <br>
-    <label for="bookAuthor">Author</label>
+    <label for="bookAuthor">BOOK AUTHOR</label>
     <input name="bookAuthor" type="text" th:field="*{bookAuthor}" id="bookAuthor">
     <br>
-    <label for="date">Date</label>
+    <label for="date">BOOK DATE</label>
     <input name="date" type="text" th:field="*{date}" id="date">
     <input type="submit" value="Edit book">
 
