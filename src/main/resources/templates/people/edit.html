@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit person</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 20px;
+    }
+
+    p {
+    margin-bottom: 10px;
+    }
+
+    hr {
+    border: 1px solid #ccc;
+    margin: 20px 0;
+    }
+
+    table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    table, th, td {
+    border: 1px solid #ddd;
+       }
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+form {
+    display: inline-block;
+}
+
+    </style>
+</head>
+<body>
+<form th:method="patch" th:action="@{/people/{id}(id = ${person.getId()})}" th:object="${person}">
+    <label for="name">Name</label>
+    <input name="name" type="text" th:field="*{name}" id="name">
+    <div th:if="${#fields.hasErrors('name')}" th:errors = "*{name}">Name error</div>
+    <br>
+    <label for="age">Age...</label>
+    <input name="age" type="number" th:field="*{age}" id="age">
+    <div th:if="${#fields.hasErrors('age')}" th:errors = "*{age}">Age error</div>
+
+    <br>
+    <input type="submit" value="Edit person">
+</form>
+</body>
+</html>

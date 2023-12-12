@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 20px;
+    }
+
+    p {
+    margin-bottom: 10px;
+    }
+
+    hr {
+    border: 1px solid #ccc;
+    margin: 20px 0;
+    }
+
+    table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    table, th, td {
+    border: 1px solid #ddd;
+       }
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+form {
+    display: inline-block;
+}
+
+    </style>
+</head>
+<body>
+<form th:method="patch" th:action="@{/book/{id}(id = ${kitob.getBookId()})}" th:object="${kitob}">
+    <label for="name">Name</label>
+    <input name="name" type="text" th:field="*{bookName}" id="name">
+    <br>
+    <label for="bookAuthor">Author</label>
+    <input name="bookAuthor" type="text" th:field="*{bookAuthor}" id="bookAuthor">
+    <br>
+    <label for="date">Date</label>
+    <input name="date" type="text" th:field="*{date}" id="date">
+    <input type="submit" value="Edit book">
+
+    </form>
+</body>
+</html>

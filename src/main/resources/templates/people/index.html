@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Odamlar</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 20px;
+    }
+
+    p {
+    margin-bottom: 10px;
+    }
+
+    hr {
+    border: 1px solid #ccc;
+    margin: 20px 0;
+    }
+
+    table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    table, th, td {
+    border: 1px solid #ddd;
+       }
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+form {
+    display: inline-block;
+}
+
+    </style>
+</head>
+<body>
+<div th:each="person:${people}">
+    <a th:href="@{/people/{id}(id =${person.getId()})}" th:text="${person.getName()}">User</a>
+</div>
+<hr>
+<p style="color:red;">Menyu</p>
+<a th:href="@{/people/new}">Yangi odam qoshish</a>
+<br>
+<a th:href="@{/book}">Kitoblar</a>
+<hr>
+</body>
+</html>
